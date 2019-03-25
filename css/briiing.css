@@ -1,0 +1,308 @@
+@media only screen and (max-width: 991px) {
+  .navbar {
+    display: none;
+  }
+}
+@font-face {
+  font-family: "Avenir LT 45 Book";
+  src: url(../fonts/Avenir_LT_45_Book.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Comic Sans MS Bold";
+  src: url(../fonts/Comic_Sans_MS_Bold.ttf) format("truetype");
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: tranparent;
+  -ms-overflow-style: scrollbar;
+  font-family: "Avenir LT 45 Book", "Century Gothic", "proxima_nova", "Helvetic Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+.bg-light-green {
+  background-color: #50aa8d;
+  color: white;
+}
+
+.bg-dark-green {
+  background-color: #2f5e4e;
+  color: white;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 0;
+}
+.header .header-down {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  width: 50px;
+  cursor: pointer;
+  border: solid white 1px;
+  border-radius: 25px;
+}
+.header .header-down img {
+  width: 100%;
+}
+
+.header-content {
+  width: 100%;
+  height: 100%;
+  background: url(../img/background.png) no-repeat center;
+  background-size: cover;
+}
+
+.container {
+  max-height: 100%;
+}
+
+.screenshot {
+  display: none;
+  margin: auto;
+  max-height: 100%;
+  width: 350px;
+}
+@media only screen and (min-width: 992px) {
+  .screenshot {
+    display: block;
+  }
+}
+
+.header-container {
+  position: absolute;
+  top: calc( 15% );
+  left: 0;
+  right: 0;
+}
+
+.header-info {
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: left;
+}
+.header-info .icon {
+  margin-top: 10px;
+}
+.header-info h1, .header-info h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+.header-info h1 {
+  font-size: 4.6vw;
+}
+.header-info h3 {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 991px) {
+  .header-info h3 {
+    font-size: 14pt;
+  }
+}
+.header-info h4 {
+  font-size: 2.3vw;
+  margin-top: 5px;
+}
+.header-info .row {
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .header-info .header-text {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header-info .download-container {
+    text-align: left;
+  }
+}
+.header-info .appstore-link {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 40%;
+  color: white;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 10px;
+}
+.header-info .appstore-link:hover:not(.mobile-store), .header-info .appstore-link:active:not(.mobile-store) {
+  background-color: #50aa8d;
+  border-color: #50aa8d;
+  text-decoration: none;
+}
+.header-info .mobile-store {
+  color: transparent;
+  border: none;
+  padding: 0;
+}
+.header-info .mobile-store img {
+  width: 100%;
+}
+.header-info .browser {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .header-info .browser {
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .header-info {
+    margin-top: 50px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header-info {
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header-info {
+    margin-top: 150px;
+  }
+}
+
+section {
+  padding-top: 50px;
+}
+section h1, section h2, section h3, section h4, section h5, section h6 {
+  text-align: center;
+}
+section h2, section h3 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  #features h3, #scenarios h3, #benefit h3 {
+    font-size: 26px;
+  }
+}
+
+#features, #scenarios, #real-encounters {
+  text-align: center;
+  color: white;
+}
+#features .processes, #scenarios .processes, .processes, #real-encounters .processes {
+  margin-top: 75px;
+}
+#features .processes .item, #scenarios .processes .item, .processes .item, #real-encounters .processes .item {
+  margin-bottom: 75px;
+}
+#features img, #scenarios img, #real-encounters img {
+  margin-bottom: 20px;
+}
+
+#features img {
+  width: 200px;
+}
+
+#features h3.low {
+  margin-bottom: 2px;
+}
+
+#scenarios img {
+  width: 300px;
+}
+
+#benefit {
+  vertical-align: left;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: white;
+}
+#benefit div {
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  #benefit h1, #benefit h2, #benefit h3, #benefit h4, #benefit div {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+#benefit img {
+  width: 1200px;
+}
+
+#real-encounters {
+  background: url(../img/handoff.png) no-repeat center;
+  background-size: cover;
+}
+@media only screen and (max-width: 991px) {
+  #real-encounters .green-icon {
+    display: none;
+  }
+}
+#real-encounters div {
+  text-align: justify;
+}
+#real-encounters .step {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+#real-encounters a:link, #real-encounters a:visited, #real-encounters a:hover, #real-encounters a:active {
+  color: white;
+  text-decoration: underline;
+}
+
+#footer {
+  background-color: #414141;
+  color: white;
+}
+#footer .press {
+  padding: 20px;
+}
+#footer .press a {
+  opacity: 0.8;
+}
+#footer .press a:hover, #footer .press a:active {
+  opacity: 1.0;
+}
+#footer a {
+  color: #9d9d9d !important;
+  text-decoration: none !important;
+}
+#footer a:hover {
+  color: white !important;
+}
+#footer .row div {
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 767px) {
+  #footer .row {
+    font-size: 15px;
+  }
+}
+#footer hr {
+  margin-bottom: 10px;
+}
+#footer .footnote {
+  color: #9d9d9d;
+  font-size: 11px;
+  text-align: center;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 992px) {
+  #footer .footnote {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #footer .copyright {
+    text-align: right;
+  }
+}

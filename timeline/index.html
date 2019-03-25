@@ -1,0 +1,250 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<title>briiing.it timeline</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, shrink-to-fit=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+	<link href="css/impress-demo.css" rel="stylesheet" />
+
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/jquery.zoomooz.min.js"></script>
+	<script src="js/spin.min.js"></script>
+	<script src="js/jquery.touchswipe.min.js"></script>
+</head>
+
+<body class="still-loading">
+	<div id="hint">
+		<p>Navigate left or right with arrow keys or space bar</p>
+	</div>
+
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+			document.querySelector("#hint").innerHTML = "<p>Swipe to navigate</p>";
+
+			document.addEventListener('gesturestart', function (e) {
+				e.preventDefault();
+			});
+
+			document.addEventListener('touchmove', function(e) {
+				if (e.scale !== 1) {
+					e.preventDefault();
+				}
+			});
+		}
+	</script>
+
+	<div id="center" style="position: fixed; top: 50%; left: 50%"></div>
+
+	<div id="boxes" style="width: 100%; height: 100%;">
+		<div class="step" zt-top="260" zt-left="1600" zt-width="2711" zt-height="606"></div>
+
+		<div class="step" zt-top="930" zt-left="1600" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="930" zt-left="2090" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="1810" zt-left="2090" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="2650" zt-left="640" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="2650" zt-left="1120" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="2650" zt-left="1600" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="2650" zt-left="2090" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="3500" zt-left="2090" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="4420" zt-left="3400" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="5260" zt-left="3400" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="5260" zt-left="3400" zt-width="490" zt-height="1580"></div>
+
+		<div class="step" zt-top="1750" zt-left="7510" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="2600" zt-left="6180" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="3440" zt-left="4750" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="3440" zt-left="5230" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="3440" zt-left="5690" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="3440" zt-left="6180" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="4270" zt-left="7510" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="4270" zt-left="7990" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="5100" zt-left="7510" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="5100" zt-left="7510" zt-width="490" zt-height="1720"></div>
+		<div class="step" zt-top="5100" zt-left="7990" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="1750" zt-left="10300" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="2560" zt-left="11630" zt-width="490" zt-height="820"></div>
+		<div class="step" zt-top="2560" zt-left="12120" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="3400" zt-left="10300" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="4230" zt-left="11630" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="5070" zt-left="10300" zt-width="490" zt-height="820"></div>
+
+		<div class="step" zt-top="5920" zt-left="11630" zt-width="490" zt-height="820"></div>
+
+		<div id="background"></div>
+	</div>
+
+	<script>
+		// Tried doing this with impress.js first but it was too slow due to the large image size
+
+		function scale(img, element) {
+			var ws = element.offsetWidth / img.width;
+			var hs = element.offsetHeight / img.height;
+
+			return Math.min(ws, hs); 
+		}
+
+		function compute() {
+			var s = scale(img, document.getElementById('background'));
+
+			console.log('Scale value is now', s);
+
+			document.querySelectorAll('.step').forEach(function(element) {
+				var attrs = [
+				  Math.round(parseInt(element.attributes['zt-top'].value) * s),
+				  Math.round(parseInt(element.attributes['zt-left'].value) * s),
+				  Math.round(parseInt(element.attributes['zt-width'].value) * s),
+				  Math.round(parseInt(element.attributes['zt-height'].value) * s)
+				];
+
+				element.style.top = attrs[0] + 'px';
+				element.style.left = attrs[1] + 'px';
+				element.style.width = attrs[2] + 'px';
+				element.style.height = attrs[3] + 'px';
+			});
+		}
+
+		// Re-compute box offsets on resize
+
+		window.addEventListener('resize', compute);
+		window.addEventListener('load', compute);
+
+		// Create a spinner as we load the image
+
+		var center = document.getElementById('center');
+
+		var spinner = new Spinner({ color: '#fff', lines: 12 }).spin(center);
+
+		// Actually pre-load the image
+
+		var img = new Image();
+
+		img.onload = function() {
+			center.parentNode.removeChild(center);
+
+			var body = document.getElementsByTagName('body')[0];
+
+			body.classList.remove('still-loading');
+			body.classList.add('done-loading');
+
+			var background = document.getElementById('background');
+
+			background.style.display = 'block';
+
+			var hint = document.getElementById('hint')
+
+			hint.style.display = 'block';
+
+			setTimeout(compute, 100);
+		};
+
+		img.src = 'img/timeline.jpg';
+
+		// Do the actual zooming on the steps
+
+		var steps = document.querySelectorAll('.step');
+		var current = -1;
+
+		function hide() {
+			var hint = document.getElementById('hint');
+
+			if (hint.style.display == 'block') {
+				hint.style.display = 'none';
+			}
+		}
+
+		function next() {
+			if (++current >= steps.length) {
+				current = 0;
+			}
+
+			$(steps[current]).zoomTo({
+			  targetsize: 0.75,
+			  nativeanimation: true,
+			  duration: 300,
+			});
+		}
+
+		function prev() {
+			if (--current < 0) {
+				current = steps.length - 1;
+			}
+
+			$(steps[current]).zoomTo({
+			  targetsize: 0.75,
+			  nativeanimation: true,
+			  duration: 300,
+			});
+		}
+
+		// Desktop browsers
+
+		window.addEventListener('keydown', function(e) {
+			switch (e.keyCode) {
+				case 32: // space
+				case 39: // right
+					next();
+
+					break;
+				case 37: // left
+					prev();
+
+					break;
+				case 27: // esc
+					$('body').zoomTo();
+
+					break;
+				default:
+					break;
+			}
+		});
+
+		window.addEventListener('keydown', hide);
+		window.addEventListener('touchstart', hide);
+		window.addEventListener('click', hide);
+
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			window.addEventListener('load', function() {
+				setTimeout(function() {
+					document.querySelector('body').classList.remove('zoomTarget');
+				}, 500);
+
+				try {
+				$("body").swipe({
+				  swipeLeft: next,
+				  swipeRight: prev,
+				  threshold: 0,
+				  allowPageScroll: 'none'
+				});
+				} catch (e) {
+					alert(e);
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

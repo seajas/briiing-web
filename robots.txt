@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /support.html
+Disallow: /terms.html
+Disallow: /privacy.html
